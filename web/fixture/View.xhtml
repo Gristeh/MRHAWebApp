@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewFixtureTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewFixtureLabel_fixtureDate}"/>
+                    <h:outputText value="#{fixtureController.selected.fixtureDate}" title="#{bundle.ViewFixtureTitle_fixtureDate}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_fixtureTime}"/>
+                    <h:outputText value="#{fixtureController.selected.fixtureTime}" title="#{bundle.ViewFixtureTitle_fixtureTime}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_location}"/>
+                    <h:outputText value="#{fixtureController.selected.location}" title="#{bundle.ViewFixtureTitle_location}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_homeTeam}"/>
+                    <h:outputText value="#{fixtureController.selected.homeTeam.name}" title="#{bundle.ViewFixtureTitle_homeTeam}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_awayTeam}"/>
+                    <h:outputText value="#{fixtureController.selected.awayTeam.name}" title="#{bundle.ViewFixtureTitle_awayTeam}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_homeTeamResult}"/>
+                    <h:outputText value="#{fixtureController.selected.homeTeamResult}" title="#{bundle.ViewFixtureTitle_homeTeamResult}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_awayTeamResult}"/>
+                    <h:outputText value="#{fixtureController.selected.awayTeamResult}" title="#{bundle.ViewFixtureTitle_awayTeamResult}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_division}"/>
+                    <h:outputText value="#{fixtureController.selected.division}" title="#{bundle.ViewFixtureTitle_division}"/>
+                    <h:outputText value="#{bundle.ViewFixtureLabel_id}"/>
+                    <h:outputText value="#{fixtureController.selected.id}" title="#{bundle.ViewFixtureTitle_id}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{fixtureController.destroyAndView}" value="#{bundle.ViewFixtureDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewFixtureEditLink}"/>
+                <br />
+                <h:commandLink action="#{fixtureController.prepareCreate}" value="#{bundle.ViewFixtureCreateLink}" />
+                <br />
+                <h:commandLink action="#{fixtureController.prepareList}" value="#{bundle.ViewFixtureShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewFixtureIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

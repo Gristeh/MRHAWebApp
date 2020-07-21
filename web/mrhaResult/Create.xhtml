@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMrhaResultTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMrhaResultLabel_fixture}" for="fixture" />
+                    <h:selectOneMenu id="fixture" value="#{mrhaResultController.selected.fixture}" title="#{bundle.CreateMrhaResultTitle_fixture}" >
+                        <f:selectItems value="#{fixtureController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Team Name:" for="homeTeam" />
+                    <h:selectOneMenu id="homeTeam" value="#{mrhaResultController.selected.homeTeam}" title="#{bundle.CreateMrhaResultTitle_homeTeam}" >
+                        <f:selectItems value="#{teamController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateMrhaResultLabel_goalsScored}" for="goalsScored" />
+                    <h:inputText id="goalsScored" value="#{mrhaResultController.selected.goalsScored}" title="#{bundle.CreateMrhaResultTitle_goalsScored}" />
+                    <h:outputLabel value="#{bundle.CreateMrhaResultLabel_goalsConceded}" for="goalsConceded" />
+                    <h:inputText id="goalsConceded" value="#{mrhaResultController.selected.goalsConceded}" title="#{bundle.CreateMrhaResultTitle_goalsConceded}" />
+                    <h:outputLabel value="#{bundle.CreateMrhaResultLabel_firstUmpire}" for="firstUmpire" />
+                    <h:inputText id="firstUmpire" value="#{mrhaResultController.selected.firstUmpire}" title="#{bundle.CreateMrhaResultTitle_firstUmpire}" />
+                    <h:outputLabel value="#{bundle.CreateMrhaResultLabel_secondUmpire}" for="secondUmpire" />
+                    <h:inputText id="secondUmpire" value="#{mrhaResultController.selected.secondUmpire}" title="#{bundle.CreateMrhaResultTitle_secondUmpire}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mrhaResultController.create}" value="#{bundle.CreateMrhaResultSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mrhaResultController.prepareList}" value="#{bundle.CreateMrhaResultShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMrhaResultIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

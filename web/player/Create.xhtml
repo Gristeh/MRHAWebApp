@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePlayerTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_club}" for="club" />
+                    <h:selectOneMenu id="club" value="#{playerController.selected.club}" title="#{bundle.CreatePlayerTitle_club}" >
+                        <f:selectItems value="#{clubController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_team}" for="team" />
+                    <h:selectOneMenu id="team" value="#{playerController.selected.team}" title="#{bundle.CreatePlayerTitle_team}" >
+                        <f:selectItems value="#{teamController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_firstName}" for="firstName" />
+                    <h:inputText id="firstName" value="#{playerController.selected.firstName}" title="#{bundle.CreatePlayerTitle_firstName}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_lastName}" for="lastName" />
+                    <h:inputText id="lastName" value="#{playerController.selected.lastName}" title="#{bundle.CreatePlayerTitle_lastName}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_shirtNumber}" for="shirtNumber" />
+                    <h:inputText id="shirtNumber" value="#{playerController.selected.shirtNumber}" title="#{bundle.CreatePlayerTitle_shirtNumber}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_goalsScored}" for="goalsScored" />
+                    <h:inputText id="goalsScored" value="#{playerController.selected.goalsScored}" title="#{bundle.CreatePlayerTitle_goalsScored}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_redCards}" for="redCards" />
+                    <h:inputText id="redCards" value="#{playerController.selected.redCards}" title="#{bundle.CreatePlayerTitle_redCards}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_yellowCards}" for="yellowCards" />
+                    <h:inputText id="yellowCards" value="#{playerController.selected.yellowCards}" title="#{bundle.CreatePlayerTitle_yellowCards}" />
+                    <h:outputLabel value="#{bundle.CreatePlayerLabel_greenCards}" for="greenCards" />
+                    <h:inputText id="greenCards" value="#{playerController.selected.greenCards}" title="#{bundle.CreatePlayerTitle_greenCards}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{playerController.create}" value="#{bundle.CreatePlayerSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{playerController.prepareList}" value="#{bundle.CreatePlayerShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePlayerIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

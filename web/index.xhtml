@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>MRHA</title>
+        <h:outputStylesheet name="css/main.css"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    </h:head>
+    <h:body class="landing is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1><a href="index.xhtml"></a>MRHA - Template by HMTL5 UP</h1>
+                <nav id="nav">
+                    <ul>
+                        <li><h:link outcome="/index" value="Home"/></li>
+                        <li>
+                            <a href="#" class="icon solid fa-angle-down">Menu</a>
+                            <ul>
+                                <li><a href="generic.html">News and Views</a></li>
+                                <li><a href="contact.html">League Rules</a></li>
+                                <li><a href="elements.html">Clubs +</a></li>
+                                <li><h:link outcome="/captain/captain" value="Captain Page" /></li>
+                                <li><h:link outcome="/admin/admin" value="Admin Page"/></li>
+                                <li><h:link outcome="/user/Create" value="Create Account" /></li>
+                                <li><h:commandButton action="#{loginController.logout}" value="Logout"/></li>
+                            </ul>
+                        </li>
+                        <li><h:link outcome="/visitor/login" value="Log In" /></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Banner -->
+            <section id="banner">
+                <h2>Midland Men's Hockey League</h2>
+                <ul class="actions special">
+                    <li><h:button class="button primary" outcome="/visitor/midlands" value="Midlands" /></li>
+                </ul>
+                <ul class="actions special">
+                    <li><a href="#" class="button primary">West Mids</a></li>
+                    <li><a href="#" class="button primary">East Mids</a></li>
+                </ul>
+                <ul class="actions special">
+                    <li><a href="#" class="button primary">North West</a></li>
+                    <li><a href="#" class="button primary">South West</a></li>
+                    <li><a href="#" class="button primary">North East</a></li>
+                    <li><a href="#" class="button primary">South East</a></li>
+                </ul>
+            </section>
+
+            <!-- Main -->
+            <section id="main" class="container">
+
+                <section class="box special">
+                    <header class="major">
+                        <h2>Introducing the ultimate mobile app
+                            <br />
+                            for doing stuff with your phone</h2>
+                        <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+                            adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+                    </header>
+                    <span class="image featured"><img src="" alt="" /></span>
+                </section>
+
+                <section class="box special features">
+                    <div class="features-row">
+                        <section>
+                            <span class="icon solid major fa-bolt accent2"></span>
+                            <h3>Magna etiam</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                        </section>
+                        <section>
+                            <span class="icon solid major fa-chart-area accent3"></span>
+                            <h3>Ipsum dolor</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                        </section>
+                    </div>
+                    <div class="features-row">
+                        <section>
+                            <span class="icon solid major fa-cloud accent4"></span>
+                            <h3>Sed feugiat</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                        </section>
+                        <section>
+                            <span class="icon solid major fa-lock accent5"></span>
+                            <h3>Enim phasellus</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                        </section>
+                    </div>
+                </section>
+
+                <div class="row">
+                    <div class="col-6 col-12-narrower">
+
+                        <section class="box special">
+                            <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+                            <h3>Sed lorem adipiscing</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                            <ul class="actions special">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-6 col-12-narrower">
+
+                        <section class="box special">
+                            <span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+                            <h3>Accumsan integer</h3>
+                            <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                            <ul class="actions special">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- CTA -->
+            <section id="cta">
+
+                <h2>Sign up to receive early access!</h2>
+                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+
+                <form>
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-8 col-12-mobilep">
+                            <input type="email" name="email" id="email" placeholder="Email Address" />
+                        </div>
+                        <div class="col-4 col-12-mobilep">
+                            <input type="submit" value="Sign Up" class="fit" />
+                        </div>
+                    </div>
+                </form>
+
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        Hello from Facelets
+        <br />
+        <br />
+        <h:link outcome="/club/List" value="Show All Club Items"/>
+        <br />
+        <h:link outcome="/division/List" value="Show All Division Items"/>
+        <br />
+        <h:link outcome="/league/List" value="Show All League Items"/>
+        <br />
+        <h:link outcome="/region/List" value="Show All Region Items"/>
+        <br />
+        <h:link outcome="/team/List" value="Show All Team Items"/>
+    </h:body>
+
+</html>
+

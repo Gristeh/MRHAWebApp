@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditFixtureTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_division}" for="division" />
+                    <h:selectOneMenu id="division" value="#{fixtureController.selected.division}" title="#{bundle.CreateFixtureTitle_division}" >
+                        <f:selectItems value="#{divisionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_homeTeam}" for="homeTeam" />
+                    <h:selectOneMenu id="homeTeam" value="#{fixtureController.selected.homeTeam}" title="#{bundle.CreateFixtureTitle_homeTeam}" >
+                        <f:selectItems value="#{teamController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_awayTeam}" for="awayTeam" />
+                    <h:selectOneMenu id="awayTeam" value="#{fixtureController.selected.awayTeam}" title="#{bundle.CreateFixtureTitle_awayTeam}" >
+                        <f:selectItems value="#{teamController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_fixtureDate}" for="fixtureDate" />
+                    <h:inputText id="fixtureDate" value="#{fixtureController.selected.fixtureDate}" title="#{bundle.CreateFixtureTitle_fixtureDate}" />
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_fixtureTime}" for="fixtureTime" />
+                    <h:inputText id="fixtureTime" value="#{fixtureController.selected.fixtureTime}" title="#{bundle.CreateFixtureTitle_fixtureTime}" />
+                    <h:outputLabel value="#{bundle.CreateFixtureLabel_location}" for="location" />
+                    <h:inputText id="location" value="#{fixtureController.selected.location}" title="#{bundle.CreateFixtureTitle_location}" />
+                </h:panelGrid>
+                <h:commandLink action="#{fixtureController.update}" value="#{bundle.EditFixtureSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditFixtureViewLink}"/>
+                <br />
+                <h:commandLink action="#{fixtureController.prepareList}" value="#{bundle.EditFixtureShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditFixtureIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

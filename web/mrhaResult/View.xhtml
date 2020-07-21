@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMrhaResultTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_fixture}"/>
+                    <h:outputText value="#{mrhaResultController.selected.fixture}" title="#{bundle.ViewMrhaResultTitle_fixture}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_homeTeam}"/>
+                    <h:outputText value="#{mrhaResultController.selected.homeTeam.name}" title="#{bundle.ViewMrhaResultTitle_homeTeam}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_awayTeam}"/>
+                    <h:outputText value="#{mrhaResultController.selected.awayTeam.name}" title="#{bundle.ViewMrhaResultTitle_awayTeam}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_goalsScored}"/>
+                    <h:outputText value="#{mrhaResultController.selected.goalsScored}" title="#{bundle.ViewMrhaResultTitle_goalsScored}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_goalsConceded}"/>
+                    <h:outputText value="#{mrhaResultController.selected.goalsConceded}" title="#{bundle.ViewMrhaResultTitle_goalsConceded}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_firstUmpire}"/>
+                    <h:outputText value="#{mrhaResultController.selected.firstUmpire}" title="#{bundle.ViewMrhaResultTitle_firstUmpire}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_secondUmpire}"/>
+                    <h:outputText value="#{mrhaResultController.selected.secondUmpire}" title="#{bundle.ViewMrhaResultTitle_secondUmpire}"/>
+                    <h:outputText value="#{bundle.ViewMrhaResultLabel_id}"/>
+                    <h:outputText value="#{mrhaResultController.selected.id}" title="#{bundle.ViewMrhaResultTitle_id}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mrhaResultController.destroyAndView}" value="#{bundle.ViewMrhaResultDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMrhaResultEditLink}"/>
+                <br />
+                <h:commandLink action="#{mrhaResultController.prepareCreate}" value="#{bundle.ViewMrhaResultCreateLink}" />
+                <br />
+                <h:commandLink action="#{mrhaResultController.prepareList}" value="#{bundle.ViewMrhaResultShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMrhaResultIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
